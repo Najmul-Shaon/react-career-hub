@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 import { CiDollar, CiLocationOn } from "react-icons/ci";
+import { Link } from "react-router-dom";
 const FeatureJob = ({ featureJob }) => {
   const {
+    id,
     logo,
     job_title,
     company_name,
@@ -10,6 +12,8 @@ const FeatureJob = ({ featureJob }) => {
     location,
     salary,
   } = featureJob;
+
+
   return (
     <div className="card bg-base-100 p-2 border-2">
       <figure className="flex justify-start">
@@ -31,7 +35,11 @@ const FeatureJob = ({ featureJob }) => {
           <p>Salary:{salary}</p>
         </div>
         <div className="card-actions">
-          <button className="btn btn-primary">Buy Now</button>
+          <Link to={`/${id}`}>
+            <button className="btn text-white bg-sky-500/75 text-lg font-extrabold">
+              View Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>
