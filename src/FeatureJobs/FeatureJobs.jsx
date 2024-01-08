@@ -1,14 +1,21 @@
 import { useEffect, useState } from "react";
 import FeatureJob from "../FeatureJob/FeatureJob";
+import { Link } from "react-router-dom";
 
 const FeatureJobs = () => {
   const [featureJobs, setFeatureJobs] = useState([]);
+  const [dataLength, setDataLength] = useState(4);
+
   useEffect(() => {
     fetch("jobs.json")
       .then((res) => res.json())
       .then((data) => setFeatureJobs(data));
   }, []);
-  //   console.log(featureJobs);
+
+  const handleViewBtn = () => {
+    setDataLength(featureJobs.length);
+  };
+
   return (
     <div>
       <div className="text-center mt-32">
@@ -21,9 +28,20 @@ const FeatureJobs = () => {
         </p>
       </div>
       <div className="grid grid-cols-2 gap-6 mt-8">
-        {featureJobs.map((featureJob) => (
+        {featureJobs.slice(0, dataLength).map((featureJob) => (
           <FeatureJob key={featureJob.id} featureJob={featureJob}></FeatureJob>
         ))}
+      </div>
+
+      <div>
+        <div className="my-8 text-center">
+          <Link
+            onClick={handleViewBtn}
+            className="btn text-white bg-sky-500/75 text-lg font-extrabold"
+          >
+            {dataLength === featureJobs.length ? "View Less" : "View All"}
+          </Link>
+        </div>
       </div>
     </div>
   );

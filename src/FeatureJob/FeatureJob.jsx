@@ -10,7 +10,6 @@ const FeatureJob = ({ featureJob }) => {
     location,
     salary,
   } = featureJob;
-  console.log(featureJob);
   return (
     <div className="card bg-base-100 p-2 border-2">
       <figure className="flex justify-start">
