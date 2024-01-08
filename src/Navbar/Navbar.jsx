@@ -1,12 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
   const navLinks = (
     <>
+      {/* <li>
+        <NavLink to={"/"}>Home</NavLink>
+      </li> */}
       <li>
         <NavLink to={"/"}>Statistics</NavLink>
       </li>
-      <li className="mx-6">
+      <li>
         <NavLink to={"/appliedJobs"}>Applied Jobs</NavLink>
       </li>
       <li>
@@ -41,15 +45,17 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-3xl font-extrabold">CareerHub</a>
+        <Link className="text-3xl font-extrabold" to="/">
+          CareerHub
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn text-white bg-sky-500/75 text-lg font-extrabold">
+        <Link className="btn text-white bg-sky-500/75 text-lg font-extrabold">
           Start Applying
-        </a>
+        </Link>
       </div>
     </div>
   );

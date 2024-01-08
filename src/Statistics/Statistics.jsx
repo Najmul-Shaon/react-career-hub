@@ -1,9 +1,9 @@
-import Navbar from "../Navbar/Navbar";
+import Banner from "../Banner/Banner";
 
 const Statistics = () => {
   return (
     <div>
-      <Navbar></Navbar>
+      <Banner></Banner>
     </div>
   );
 };

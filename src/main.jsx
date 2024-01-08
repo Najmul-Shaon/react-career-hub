@@ -7,6 +7,7 @@ import Root from "./Root/Root";
 import ErrorPage from "./ErrorPage/ErrorPage";
 import AppliedJobs from "./AppliedJobs/AppliedJobs";
 import Blog from "./Blog/Blog";
+import Statistics from "./Statistics/Statistics";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/",
+        element: <Statistics></Statistics>,
       },
     ],
   },
