@@ -1,31 +1,32 @@
 import { useEffect, useState } from "react";
-import Job from "../Job/Job";
+import FeatureJob from "../FeatureJob/FeatureJob";
 
-const JobCategory = () => {
-  const [jobs, setJobs] = useState([]);
+const FeatureJobs = () => {
+  const [featureJobs, setFeatureJobs] = useState([]);
   useEffect(() => {
-    fetch("categories.json")
+    fetch("jobs.json")
       .then((res) => res.json())
-      .then((data) => setJobs(data));
+      .then((data) => setFeatureJobs(data));
   }, []);
+  //   console.log(featureJobs);
   return (
     <div>
       <div className="text-center mt-32">
         <h3 className="text-[#1A1919] text-5xl font-extrabold">
-          Job Category List
+          Featured Jobs
         </h3>
         <p className="text-md font-medium text-[#757575] mt-4">
           Explore thousands of job opportunities with all the information you
           need. Its your future
         </p>
       </div>
-      <div className="flex justify-center mt-8 gap-6">
-        {jobs.map((job) => (
-          <Job key={job.id} job={job}></Job>
+      <div className="grid grid-cols-2 gap-6 mt-8">
+        {featureJobs.map((featureJob) => (
+          <FeatureJob key={featureJob.id} featureJob={featureJob}></FeatureJob>
         ))}
       </div>
     </div>
   );
 };
 
-export default JobCategory;
+export default FeatureJobs;
