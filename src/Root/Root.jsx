@@ -1,9 +1,13 @@
-import Home from "../Home/Home";
+import { Outlet } from "react-router-dom";
+import Statistics from "../Statistics/Statistics";
+import Footer from "../Footer/Footer";
 
 const Root = () => {
   return (
     <div>
-      <Home></Home>
+      <Statistics></Statistics>
+      <Outlet></Outlet>
+      <Footer></Footer>
     </div>
   );
 };

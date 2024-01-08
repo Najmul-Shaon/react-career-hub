@@ -5,11 +5,23 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Root/Root";
 import ErrorPage from "./ErrorPage/ErrorPage";
+import AppliedJobs from "./AppliedJobs/AppliedJobs";
+import Blog from "./Blog/Blog";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
     errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/appliedJobs",
+        element: <AppliedJobs></AppliedJobs>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+    ],
   },
 ]);
 
