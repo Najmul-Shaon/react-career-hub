@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import { CiDollar, CiLocationOn } from "react-icons/ci";
 import { Link } from "react-router-dom";
-import "react-toastify/dist/ReactToastify.css";
-const FeatureJob = ({ featureJob }) => {
+const AppliedJob = ({ appliedJob }) => {
+  console.log(appliedJob);
   const {
     id,
     logo,
@@ -12,16 +12,17 @@ const FeatureJob = ({ featureJob }) => {
     job_type,
     location,
     salary,
-  } = featureJob;
-
+  } = appliedJob;
   return (
-    <div className="card bg-base-100 p-8 border-2">
-      <figure className="flex justify-start h-1/5">
+    <div className="border-2 mb-4 rounded-lg p-8 flex items-center">
+      <figure className="bg-[#F4F4F4] rounded-lg px-12 py-24 w-1/5">
         <img src={logo} alt="" />
       </figure>
-      <div className="card-body">
-        <h2 className="card-title">{job_title}</h2>
-        <p>{company_name}</p>
+      <div className="card-body w-3/5">
+        <h2 className="card-title text-[#474747] text-3xl font-extrabold">
+          {job_title}
+        </h2>
+        <p className="text-[#757575] font-semibold text-2xl">{company_name}</p>
         <div>
           <button className="btn btn-outline btn-accent mr-4">
             {remote_or_onsite}
@@ -38,18 +39,20 @@ const FeatureJob = ({ featureJob }) => {
             <p>Salary:{salary}</p>
           </div>
         </div>
-        <div className="card-actions">
-          <Link to={`/${id}`}>
-            <button className="btn text-white bg-sky-500/75 text-lg font-extrabold">
-              View Details
-            </button>
-          </Link>
-        </div>
+      </div>
+      <div className="card-actions w-1/5">
+        {/* <Link to={`/${id}`}> */}
+        <Link to={`/${id}`}>
+          <button className="btn text-white bg-sky-500/75 text-lg font-extrabold">
+            View Details
+          </button>
+        </Link>
       </div>
     </div>
   );
 };
-FeatureJob.propTypes = {
-  featureJob: PropTypes.object.isRequired,
+
+AppliedJob.propTypes = {
+  appliedJob: PropTypes.object.isRequired,
 };
-export default FeatureJob;
+export default AppliedJob;

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 const Job = ({ job }) => {
   const { logo, category_name, availability } = job;
   return (
-    <div className="bg-[#7e90fe0d] p-6 rounded-lg">
+    <div className="bg-[#7e90fe0d] p-6 rounded-lg w-full">
       <figure className="mb-8">
         <img className="bg-[#9873ff1a] p-4 rounded-lg" src={logo} alt="" />
       </figure>

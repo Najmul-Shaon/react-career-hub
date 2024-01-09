@@ -3,9 +3,6 @@ import { CiDollar, CiLocationOn } from "react-icons/ci";
 import { GrFormSchedule } from "react-icons/gr";
 import { LuPhone } from "react-icons/lu";
 import { HiOutlineMail } from "react-icons/hi";
-import { ToastContainer, toast } from "react-toastify";
-
-import "react-toastify/dist/ReactToastify.css";
 import { saveJobApplication } from "../Utilities/StoredToLocalStorage";
 const ViewDetails = () => {
   const jobsDetails = useLoaderData();
@@ -27,7 +24,7 @@ const ViewDetails = () => {
   const handleApply = () => {
     console.log("clicked");
     // toast("Your apply has been completed.");
-    saveJobApplication(id);
+    saveJobApplication(idInt);
   };
 
   return (
@@ -125,7 +122,6 @@ const ViewDetails = () => {
           </Link>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };
