@@ -30,10 +30,36 @@ const ViewDetails = () => {
       </h1>
       <div className="grid grid-cols-3 gap-6">
         <div className="col-span-2">
-          <p>Job Description: {job_description}</p>
-          <p>Respnsibility: {job_responsibility}</p>
-          <p>Educational Requirements: {educational_requirements}</p>
-          <p>Experience: {experiences}</p>
+          <h4 className="text-[#757575] text-base font-medium mb-6">
+            <span className="text-[#1A1919] font-extrabold">
+              Job Description:
+            </span>{" "}
+            {job_description}
+          </h4>
+          <h4 className="text-[#757575] text-base font-medium mb-6">
+            <span className="text-[#1A1919] font-extrabold">
+              Respnsibility:
+            </span>{" "}
+            {job_responsibility}
+          </h4>
+          <div className="flex flex-col">
+            <div className="mb-6">
+              <h4 className="text-[#1A1919] font-extrabold text-base mb-4">
+                Educational Requirements:
+              </h4>
+              <p className="text-[#757575] text-base font-medium ">
+                {educational_requirements}
+              </p>
+            </div>
+            <div>
+              <h4 className="text-[#1A1919] font-extrabold text-base mb-4">
+                Experience:
+              </h4>
+              <p className="text-[#757575] text-base font-medium">
+                {experiences}
+              </p>
+            </div>
+          </div>
         </div>
         <div>
           <div className="bg-[#9873ff1a] p-4 rounded-lg">
@@ -84,7 +110,7 @@ const ViewDetails = () => {
               </div>
             </div>
           </div>
-          <Link >
+          <Link>
             <button className="btn text-white bg-sky-500/75 text-lg font-extrabold my-6 w-full">
               Apply Now
             </button>
