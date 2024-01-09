@@ -13,7 +13,9 @@ const FeatureJobs = () => {
   }, []);
 
   const handleViewBtn = () => {
-    setDataLength(featureJobs.length);
+    dataLength === featureJobs.length
+      ? setDataLength(4)
+      : setDataLength(featureJobs.length);
   };
 
   return (
