@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { CiDollar, CiLocationOn } from "react-icons/ci";
 import { Link } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 const FeatureJob = ({ featureJob }) => {
   const {
     id,
@@ -12,7 +13,6 @@ const FeatureJob = ({ featureJob }) => {
     location,
     salary,
   } = featureJob;
-
 
   return (
     <div className="card bg-base-100 p-2 border-2">

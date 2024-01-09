@@ -3,11 +3,13 @@ import { CiDollar, CiLocationOn } from "react-icons/ci";
 import { GrFormSchedule } from "react-icons/gr";
 import { LuPhone } from "react-icons/lu";
 import { HiOutlineMail } from "react-icons/hi";
+import { ToastContainer, toast } from "react-toastify";
 
+import "react-toastify/dist/ReactToastify.css";
+import { saveJobApplication } from "../Utilities/StoredToLocalStorage";
 const ViewDetails = () => {
   const jobsDetails = useLoaderData();
   const { id } = useParams();
-  //   console.log(id);
   const idInt = parseInt(id);
 
   const jobDetails = jobsDetails.find((jobDetails) => jobDetails.id === idInt);
@@ -21,7 +23,12 @@ const ViewDetails = () => {
     salary,
     contact_information,
   } = jobDetails;
-  console.log(contact_information);
+
+  const handleApply = () => {
+    console.log("clicked");
+    // toast("Your apply has been completed.");
+    saveJobApplication(id);
+  };
 
   return (
     <div className="my-10">
@@ -103,20 +110,22 @@ const ViewDetails = () => {
                 <div className="flex items-center gap-2">
                   <CiLocationOn className="text-lg"></CiLocationOn>
                   <p className="text-[#757575] text-lg font-medium">
-                    <span className="text-[#474747] font-bold">Address:</span>{" "}
+                    <span className="text-[#474747] font-bold">Address:</span>
                     {contact_information.address}
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <Link>
-            <button className="btn text-white bg-sky-500/75 text-lg font-extrabold my-6 w-full">
-              Apply Now
-            </button>
+          <Link
+            onClick={handleApply}
+            className="btn text-white bg-sky-500/75 text-lg font-extrabold my-6 w-full"
+          >
+            Apply Now
           </Link>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
