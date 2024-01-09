@@ -89,7 +89,7 @@ const ViewDetails = () => {
               <h3 className="my-7 text-[#1A1919] text-lg font-extrabold border-b-2 pb-6">
                 Contact Information
               </h3>
-              <div>
+              <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-2">
                   <LuPhone className="text-lg"></LuPhone>{" "}
                   <p className="text-[#757575] text-lg font-medium">

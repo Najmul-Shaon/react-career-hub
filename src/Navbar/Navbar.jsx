@@ -4,17 +4,20 @@ import "./Navbar.css";
 const Navbar = () => {
   const navLinks = (
     <>
-      {/* <li>
-        <NavLink to={"/"}>Home</NavLink>
-      </li> */}
       <li>
-        <NavLink to={"/"}>Statistics</NavLink>
+        <NavLink to={"/"}>
+          <p className="text-base text-[#757575] font-bold">Statistics</p>
+        </NavLink>
       </li>
       <li>
-        <NavLink to={"/appliedJobs"}>Applied Jobs</NavLink>
+        <NavLink to={"/appliedJobs"}>
+          <p className="text-base text-[#757575] font-bold">Applied Jobs</p>
+        </NavLink>
       </li>
       <li>
-        <NavLink to={"/blog"}>Blog</NavLink>
+        <NavLink to={"/blog"}>
+          <p className="text-base text-[#757575] font-bold">Blog</p>
+        </NavLink>
       </li>
     </>
   );
@@ -53,7 +56,10 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end">
-        <Link className="btn text-white bg-sky-500/75 text-lg font-extrabold">
+        <Link
+          to="/featureJobs"
+          className="btn text-white bg-sky-500/75 text-lg font-extrabold"
+        >
           Start Applying
         </Link>
       </div>

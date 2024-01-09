@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import { CiDollar, CiLocationOn } from "react-icons/ci";
 import { Link } from "react-router-dom";
 const AppliedJob = ({ appliedJob }) => {
-  console.log(appliedJob);
   const {
     id,
     logo,
@@ -41,7 +40,6 @@ const AppliedJob = ({ appliedJob }) => {
         </div>
       </div>
       <div className="card-actions w-1/5">
-        {/* <Link to={`/${id}`}> */}
         <Link to={`/${id}`}>
           <button className="btn text-white bg-sky-500/75 text-lg font-extrabold">
             View Details
